@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanOS-8 | El Portal Maestro</title>
+    <style>
+        :root {
+            --primary: #00ff00;
+            --bg: #050505;
+            --surface: #111;
+            --text: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* BARRA SUPERIOR (Panel de Control) */
+        header {
+            background: var(--surface);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .status-icons span {
+            margin-left: 15px;
+            font-size: 14px;
+            color: var(--primary);
+        }
+
+        /* CONTENIDO PRINCIPAL: GRILLA DE APPS */
+        main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            padding: 50px;
+            justify-items: center;
+            align-content: start;
+        }
+
+        .app-icon {
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+            width: 120px;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: #222;
+            border-radius: 15px;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 1px solid #444;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .app-icon:hover .icon-box {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+        }
+
+        /* BARRA DE TAREAS INFERIOR (Dock) */
+        footer {
+            height: 60px;
+            background: rgba(20, 20, 20, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid #333;
+            backdrop-filter: blur(10px);
+        }
+
+        .dock-item {
+            margin: 0 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .badge {
+            background: var(--primary);
+            color: black;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 4px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="font-weight: bold; letter-spacing: 1px;">SanOS-8 <span style="color:var(--primary)">v1.0</span></div>
+        <div class="status-icons">
+            <span>📡 Online</span>
+            <span>🛡️ Seguro</span>
+            <span>📺 60 Hz</span>
+            <span>🔋 8GB RAM</span>
+        </div>
+    </header>
+
+    <main>
+        <a href="/install/liveusb" class="app-icon">
+            <div class="icon-box">💿</div>
+            <span>Instalador</span>
+        </a>
+
+        <div class="app-icon">
+            <div class="icon-box">👨‍💻</div>
+            <span>27+ Lenguajes</span>
+        </div>
+
+        <a href="https://github.com/sanos8" class="app-icon">
+            <div class="icon-box">📂</div>
+            <span>Código Fuente</span>
+        </a>
+
+        <div class="app-icon">
+            <div class="icon-box">🛡️</div>
+            <span>Security Lab</span>
+        </div>
+
+        <div class="app-icon">
+            <div class="icon-box">🎮</div>
+            <span>Xbox Game Bar</span>
+        </div>
+
+        <div class="app-icon">
+            <div class="icon-box">🎬</div>
+            <span>Reproductor</span>
+        </div>
+    </main>
+
+    <footer>
+        <div class="dock-item">🏠</div>
+        <div class="dock-item">🔍</div>
+        <div class="dock-item">⚙️</div>
+        <div class="dock-item">🐍 <span class="badge">Py 3.14</span></div>
+    </footer>
+
+</body>
+</html>
